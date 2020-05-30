@@ -13,13 +13,12 @@ export const Todo = (props) => {
         setChecked(event.target.checked);
     };
 
-    const toggleHover = () => setHovered(!hoverd);
 
     return (
-        <li className = {className} style={liStyle} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+        <li className = {className} style={liStyle} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
             <Checkbox color="primary" onChange={handleCheck} />
             {props.name}
-            <button type="button" className="btn btn-danger ml-3" onClick={() => props.onDelete(props.todo.id)}>Delete</button>
+            <button type="button" className="btn btn-danger float-right" onClick={() => props.onDelete(props.todo.id)}>Delete</button>
         </li>
     );
 }

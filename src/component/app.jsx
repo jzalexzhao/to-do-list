@@ -51,13 +51,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <h4 className="card-title m-2">TO-DO-LIST</h4>
-        <form onSubmit = {this.handleSubmit}>
-          <input type="text" className="form-control" placeholder="What do you need to do today?" value={this.state.text} onChange= {this.handleChange}></input>
-          <button className="btn btn-primary mt-2" type="submit">Add</button>
+      <div className="container">
+        <h2 className="card-title border justify-content-center row">TO-DO-LIST</h2>
+        <form className="row" onSubmit = {this.handleSubmit}>
+          <input type="text" className="form-control col-11" placeholder="What do you need to do today?" value={this.state.text} onChange= {this.handleChange}></input>
+          <button className="btn btn-primary col-1" type="submit">Add</button>
         </form>
-        <ul className = "list-group">
+        <ul className = "list-group row">
         {this.state.todos.map((item) => (
           <Todo name={item.name} key={item.id} todo={item} onDelete={this.handleDelete} />
         ))}
