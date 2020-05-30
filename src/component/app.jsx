@@ -7,10 +7,6 @@ export default class App extends Component {
   state = {
     text:"",
     todos: [
-      {
-        id:1,
-        name:"Do Homework"
-      }
     ],
   };
 
